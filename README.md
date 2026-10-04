@@ -1,5 +1,15 @@
 # TRACE prototype
 
+## Train the new burglary / normal / vandalism model
+
+Upload [notebooks/Train_Crime_Colab.ipynb](notebooks/Train_Crime_Colab.ipynb) to Google Colab,
+select a GPU runtime, and follow the cells. The notebook includes the current training
+code, dataset storage checks, resumable feature extraction/training, and a model export
+for this project. Read [the setup and storage guide](docs/CRIME_TRAINING.md) first: the
+dataset archive alone is about 82 GB. After training and importing the export, use
+`run_crime.cmd` to classify a video. This is a separate three-class video model; no new
+trained weights or real-data accuracy results are included yet.
+
 This is a small working prototype for the CCTV concept in `hih.pptx`. It detects people with a pretrained YOLO model, tracks them with ByteTrack, and raises one event when a tracked person remains inside a user-selected restricted zone for the configured dwell time. Each event gets a snapshot, JSONL record, and SQLite row. It deliberately does not identify faces or infer intent.
 
 ## Run it
